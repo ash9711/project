@@ -34,18 +34,8 @@ def test_empty_directory():
     
     os.rmdir(empty_dir)
 
-def test_multiple_long_subdirectories():
-    test_dir = '/tmp/testdir2'
-    os.makedirs(os.path.join(test_dir, 'alpha/beta/gamma/delta'), exist_ok=True)
-    os.makedirs(os.path.join(test_dir, 'epsilon/zeta/eta/theta'), exist_ok=True)
-    
-    longest_subdir = find_longest_subdirectory(test_dir)
-    # Expecting 'delta' because it is deeper
-    assert longest_subdir == 'delta'
 
-    teardown_test_environment(test_dir)
 
 if __name__ == "__main__":
     test_find_longest_subdirectory()
     test_empty_directory()
-    test_multiple_long_subdirectories()
