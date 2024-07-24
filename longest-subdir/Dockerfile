@@ -1,4 +1,4 @@
-# Using a base image
+# Using a Python3.8 image
 FROM python:3.8-slim
 
 # Set the working directory
